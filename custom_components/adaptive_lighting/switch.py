@@ -1750,7 +1750,7 @@ class SunLightSettings:
             if percent > 0:
                 return self.max_brightness
             delta_brightness = self.max_brightness - self.min_brightness
-            percent = 1 + percent
+            percent = 1 + percent * 2 if percent > -0.5 else 0
             return (delta_brightness * percent) + self.min_brightness
 
         now = dt_util.utcnow()
